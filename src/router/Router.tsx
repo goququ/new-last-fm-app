@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import Albums from "@screens/albums";
-import Artists from "@screens/artists";
+import Albums from "screens/albums";
+import Artists from "screens/artists";
 
 const Router = () => {
   return (

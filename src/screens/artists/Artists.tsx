@@ -1,7 +1,9 @@
 import React from "react";
 
+import Layout from "components/layout";
+
 const Artists = () => {
-  return <div>artists</div>;
+  return <Layout>artists</Layout>;
 };
 
 export default Artists;
