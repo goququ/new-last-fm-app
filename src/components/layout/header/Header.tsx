@@ -1,6 +1,13 @@
 import React from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import {
+  Navbar,
+  NavLink,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,10 +18,10 @@ const Header = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <NavLink className="nav-link" to="/artists">
+          <NavLink as={Link} to="/artists">
             Artists
           </NavLink>
-          <NavLink className="nav-link" to="/albums">
+          <NavLink as={Link} to="/albums">
             Albums
           </NavLink>
         </Nav>

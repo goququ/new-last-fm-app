@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import Header from "./header";
+import { ContentCol, StyledContainer } from "./styled";
 
 interface Props {
   children: any;
@@ -9,12 +10,12 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <Container fluid>
+    <StyledContainer fluid>
       <Header />
       <Row>
-        <Col>{children}</Col>
+        <ContentCol>{children}</ContentCol>
       </Row>
-    </Container>
+    </StyledContainer>
   );
 };
 
