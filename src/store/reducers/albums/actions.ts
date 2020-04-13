@@ -6,5 +6,8 @@ export default createActions("albums", {
   getAlbums: {
     url: API_URL,
     method: "GET",
+    params: {
+      method: "albums.search",
+    },
   },
 });

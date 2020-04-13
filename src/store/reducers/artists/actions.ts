@@ -8,7 +8,6 @@ export default createActions("artists", {
     url: API_URL,
     params: {
       method: "artist.search",
-      search: "xx",
     },
   },
 });
