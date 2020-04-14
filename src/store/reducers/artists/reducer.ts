@@ -2,11 +2,19 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 import actions from "./actions";
+import { Artist, ArtistsState } from "./types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: ArtistsState = {
   artist: "",
   artists: [],
 };
+
+const mapArtists = ({ image, name, url, listeners }: any): Artist => ({
+  img: image.pop()["#text"],
+  name,
+  url,
+  listeners,
+});
 
 export default createReducer(INITIAL_STATE, {
   [actions.types.GET_ARTISTS.REQUEST]: (
@@ -23,6 +31,7 @@ export default createReducer(INITIAL_STATE, {
     { payload }: any
   ) => {
     const artists = payload.response.results.artistmatches.artist;
-    state.artists = state.artists.concat(artists);
+
+    state.artists = state.artists.concat(artists.map(mapArtists));
   },
 });
