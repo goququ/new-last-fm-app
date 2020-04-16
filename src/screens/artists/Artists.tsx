@@ -1,26 +1,20 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 
 import Layout from "components/layout";
 import CardList from "components/card-list";
-import { actions } from "store";
 
 import Form from "./form";
-import { useArtistsCards } from "./hooks";
+import { useArtistsCards, useSyncedList } from "./hooks";
 
 const Artists = () => {
   const artists = useArtistsCards();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(actions.artists.creators.getArtists({ artist: "xx" }));
-  }, [dispatch]);
+  const { isLoading } = useSyncedList();
 
   return (
     <Layout>
       <Form />
       <br />
-      <CardList items={artists} />
+      <CardList isLoading={isLoading} items={artists} loadItems={() => {}} />
     </Layout>
   );
 };

@@ -6,12 +6,12 @@ import { Input } from "components/form";
 const AlbumsForm = () => {
   return (
     <Row>
-      <Col>
+      {/* <Col>
         <Input name="artist" placeholder="Artist" />
       </Col>
       <Col>
         <Input name="album" placeholder="Album" />
-      </Col>
+      </Col> */}
       <Col md="auto">
         <Button type="submit" variant="success">
           Search

@@ -18,7 +18,7 @@ const mapArtists = ({ image, name, url, listeners }: any): Artist => ({
 
 export default createReducer(INITIAL_STATE, {
   [actions.types.GET_ARTISTS.REQUEST]: (
-    state: typeof INITIAL_STATE,
+    state: ArtistsState,
     { payload }: { payload: any }
   ) => {
     const isSame = state.artist === payload.artist;
@@ -27,7 +27,7 @@ export default createReducer(INITIAL_STATE, {
     state.artists = isSame ? state.artists : [];
   },
   [actions.types.GET_ARTISTS.RESPONSE]: (
-    state: typeof INITIAL_STATE,
+    state: ArtistsState,
     { payload }: any
   ) => {
     const artists = payload.response.results.artistmatches.artist;
