@@ -17,7 +17,7 @@ const Input = ({ label, error, field, form, ...rest }: Props) => {
       <Form.Control
         {...rest}
         {...field}
-        value={field.value}
+        value={field.value || ""}
         isInvalid={!!error}
       />
       {error && (

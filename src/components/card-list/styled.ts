@@ -14,4 +14,5 @@ export const SpinnerCol = styled(Col)`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 `;

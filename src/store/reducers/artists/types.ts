@@ -8,4 +8,6 @@ export interface Artist {
 export interface ArtistsState {
   artists: Artist[];
   artist: string;
+  total: number;
+  limit: number;
 }
