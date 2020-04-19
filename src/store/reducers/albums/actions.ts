@@ -1,6 +1,6 @@
 // @ts-ignore
 import { createActions } from "redux-arc";
-import { API_URL } from "config";
+import { API_URL } from "consts";
 
 export default createActions("albums", {
   getAlbums: {

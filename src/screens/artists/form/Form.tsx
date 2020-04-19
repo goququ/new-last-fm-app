@@ -14,6 +14,8 @@ const ArtistsForm = () => {
   const { artist } = qs.parse(location.search);
   const { onSubmit } = useFormActions();
 
+  console.log(process.env);
+
   return (
     <Formik onSubmit={onSubmit} initialValues={{ artist }}>
       <Form>

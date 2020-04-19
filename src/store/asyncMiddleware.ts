@@ -2,10 +2,8 @@
 import { createAsyncMiddleware } from "redux-arc";
 import axios from "axios";
 
-import config from "../config";
-
 const DEFAULT_PARAMS = {
-  api_key: config.key,
+  api_key: process.env.API_KEY,
   format: "json",
 };
 
