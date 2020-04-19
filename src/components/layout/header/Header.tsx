@@ -14,9 +14,9 @@ const Header = () => {
           <NavLink as={Link} to="/artists">
             Artists
           </NavLink>
-          <NavLink as={Link} to="/albums">
+          {/* <NavLink as={Link} to="/albums">
             Albums
-          </NavLink>
+          </NavLink> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -8,13 +8,18 @@ import { useArtistsCards, useSyncedList } from "./hooks";
 
 const Artists = () => {
   const { artists } = useArtistsCards();
-  const { isLoading, goToNextPage } = useSyncedList();
+  const { isLoading, goToNextPage, noSearchQuery } = useSyncedList();
 
   return (
     <Layout>
       <Form />
       <br />
-      <CardList isLoading={isLoading} items={artists} loadMore={goToNextPage} />
+      <CardList
+        isLoading={isLoading}
+        items={artists}
+        loadMore={goToNextPage}
+        noSearchQuery={noSearchQuery}
+      />
     </Layout>
   );
 };

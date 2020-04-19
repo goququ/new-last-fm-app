@@ -39,14 +39,17 @@ const usePagination = () => {
 export const useSyncedList = () => {
   const location = useLocation();
   const { pagination, goToNextPage } = usePagination();
-  const { artist } = qs.parse(location.search);
+  const { artist = "" } = qs.parse(location.search);
+  const noSearchQuery = !artist?.length;
   const { isLoading, sendRequest } = useRequest(
     actions.artists.creators.getArtists
   );
 
   useEffect(() => {
-    sendRequest({ artist, ...pagination });
+    if (artist) {
+      sendRequest({ artist, ...pagination });
+    }
   }, [sendRequest, artist, pagination]);
 
-  return { isLoading, pagination, goToNextPage };
+  return { isLoading, pagination, goToNextPage, noSearchQuery };
 };

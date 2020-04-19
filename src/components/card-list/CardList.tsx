@@ -11,9 +11,10 @@ interface Props {
   items: CardProps[];
   isLoading: boolean;
   loadMore?: () => void;
+  noSearchQuery?: boolean;
 }
 
-const CardList = ({ items, isLoading, loadMore }: Props) => {
+const CardList = ({ items, isLoading, loadMore, noSearchQuery }: Props) => {
   const onItems = !items.length && !isLoading;
 
   return (
@@ -21,11 +22,15 @@ const CardList = ({ items, isLoading, loadMore }: Props) => {
       <StyledRow>
         {onItems && (
           <Col>
-            <h2>Nothing was found :(</h2>
+            <h2>
+              {noSearchQuery
+                ? "Let's search something"
+                : "Nothing was found :("}
+            </h2>
           </Col>
         )}
         {items.map((item, index) => (
-          <StyledCol md={4} key={index}>
+          <StyledCol md={4} sm={6} key={index}>
             <Card {...item} />
           </StyledCol>
         ))}
